@@ -38,7 +38,8 @@
                                 <h6 class="text-danger">{{$message}}</h6>
                                 @enderror
                             </div>
-                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <label for="name"></label>
+                            <h6 class="mb-2 text-sm">Enter Name</h6>
                             <input type="text" name="name" value="{{old('name')}}" id="name" placeholder="Your Name" />
                         </div>
                         <div class="form-group">
@@ -47,7 +48,8 @@
                                 <h6 class="text-danger">{{$message}}</h6>
                                 @enderror
                             </div>
-                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <label for="email"></label>
+                            <h6 class="mb-2 text-sm">Enter Email</h6>
                             <input type="text" name="email" id="email" placeholder="Your Email" />
 
                         </div>
@@ -57,8 +59,9 @@
                                 <h6 class="text-danger">{{$message}}</h6>
                                 @enderror
                             </div>
-                            <label for="phone"><i class="zmdi zmdi-rotate-right zmdi-hc-spin"></i></label>
-                            <input type="text" name="phone" id="phone" placeholder="Your Phone" />
+                            <label for="phone"></label>
+                            <h6 class="mb-2 text-sm">Enter Phone Number</h6>
+                            <input type="text" name="phone" id="phone" placeholder="Your Phone Number" />
 
                         </div>
                         <input type="text" value="user" hidden name="role">
@@ -70,7 +73,8 @@
                                 @enderror
                             </div>
                            
-                            <label for="address"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></label>
+                            <label for="address"></label>
+                            <h6 class="mb-2 text-sm">Enter Address</h6>
                             <input type="text" name="address" id="address" placeholder="Your Address" />
 
                         </div>
@@ -81,7 +85,8 @@
                                 <h6 class="text-danger">{{$message}}</h6>
                                 @enderror
                             </div>
-                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                            <label for="password"></label>
+                            <h6 class="mb-2 text-sm">Enter Password</h6>
                             <input type="password" name="password" id="password" placeholder="Your Password" />
 
                         </div>
@@ -91,7 +96,8 @@
                                 <h6 class="text-danger">{{$message}}</h6>
                                 @enderror
                             </div>
-                            <label for="confirm-password"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <label for="confirm-password"></label>
+                            <h6 class="mb-3 text-sm">Re_Enter Email</h6>
                             <input type="password" name="confirm-password" id="confirm-password"
                                 placeholder="Repeat password" />
 
@@ -102,7 +108,7 @@
                     </form>
                 </div>
                 <div class="signup-image">
-                    <figure><img src="loginForm/images/signup-image.jpg" alt="sing up image"></figure>
+                    <figure><img src="loginForm/images/im.PNG" alt="sing up image"></figure>
                     <a href="{{ route ('login') }}" class="signup-image-link">I am already member</a>
                 </div>
             </div>
@@ -123,7 +129,7 @@
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
-                <figure><img src="loginForm/images/signin-image.jpg" alt="sing up image"></figure>
+                <figure><img src="loginForm/images/im.PNG" alt="sing up image"></figure>
                 <a href="{{ route ('registration') }}" class="signup-image-link">Create an account</a>
             </div>
 
