@@ -44,12 +44,17 @@ class LoginController extends Controller
                 ['email', '=', $request->email],
                 ['password', '=', $request->password]
             ])->first();
+
             if ($check) {
 
-               
-                session(['email' => $check->email, 'id' => $check->id, 'name' => $check->name, 'role' => $check->role, 'phone' => $check->phone, 'address' => $check->address]);
-                return view('pages.dashboard');
-    
+                // $user = User::where('id', $request->id)->first();
+                $request=session()->put('role',$check->role);
+                $request=session()->put('id',$check->id);
+                $request=session()->put('email',$check->email);
+                $request=session()->put('name',$check->name);
+                return redirect()->route('adminDashboard');
+                // return view('pages.dashboard');
+                // return view('pages.dashboard', compact($admin));
             }
 
             $request->session()->flash('database-error', 'User Not Found!');
@@ -61,8 +66,11 @@ class LoginController extends Controller
             ])->first();
 
             if ($check) {
-                session(['id' => $check->id, 'email' => $check->email, 'name' => $check->name, 'role' => $check->role, 'phone' => $check->phone]);
-                return view('pages.dashboard');
+                $request=session()->put('role',$check->role);
+                $request=session()->put('id',$check->id);
+                $request=session()->put('email',$check->email);
+                $request=session()->put('name',$check->name);
+                return redirect()->route('userDashboard');
             }
             $request->session()->flash('database-error', 'User Not Found!');
             return redirect('login');

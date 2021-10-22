@@ -18,7 +18,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-form">
-                    <h2 class="form-title">Sign up</h2>
+                    <h2 class="form-title">Registration</h2>
                     <div class=" mb-3">
                         <div class="w-100">
                             @if(session('database-error'))
@@ -39,7 +39,7 @@
                                 @enderror
                             </div>
                             <label for="name"></label>
-                            <h6 class="mb-2 text-sm">Enter Name</h6>
+                            <h6 class="mb-0 text-sm">Enter Name</h6>
                             <input type="text" name="name" value="{{old('name')}}" id="name" placeholder="Your Name" />
                         </div>
                         <div class="form-group">
@@ -49,7 +49,7 @@
                                 @enderror
                             </div>
                             <label for="email"></label>
-                            <h6 class="mb-2 text-sm">Enter Email</h6>
+                            <h6 class="mb-0 text-sm">Enter Email</h6>
                             <input type="text" name="email" id="email" placeholder="Your Email" />
 
                         </div>
@@ -60,8 +60,8 @@
                                 @enderror
                             </div>
                             <label for="phone"></label>
-                            <h6 class="mb-2 text-sm">Enter Phone Number</h6>
-                            <input type="text" name="phone" id="phone" placeholder="Your Phone Number" />
+                            <h6 class="mb-0 text-sm">Enter Phone</h6>
+                            <input type="text" name="phone" id="phone" placeholder="Your Phone" />
 
                         </div>
                         <input type="text" value="user" hidden name="role">
@@ -74,7 +74,7 @@
                             </div>
                            
                             <label for="address"></label>
-                            <h6 class="mb-2 text-sm">Enter Address</h6>
+                            <h6 class="mb-0 text-sm">Enter Address</h6>
                             <input type="text" name="address" id="address" placeholder="Your Address" />
 
                         </div>
@@ -86,7 +86,7 @@
                                 @enderror
                             </div>
                             <label for="password"></label>
-                            <h6 class="mb-2 text-sm">Enter Password</h6>
+                            <h6 class="mb-0 text-sm">Enter Password</h6>
                             <input type="password" name="password" id="password" placeholder="Your Password" />
 
                         </div>
@@ -97,7 +97,7 @@
                                 @enderror
                             </div>
                             <label for="confirm-password"></label>
-                            <h6 class="mb-3 text-sm">Re_Enter Email</h6>
+                            <h6 class="mb-0 text-sm">Re-Enter Password</h6>
                             <input type="password" name="confirm-password" id="confirm-password"
                                 placeholder="Repeat password" />
 
@@ -108,8 +108,8 @@
                     </form>
                 </div>
                 <div class="signup-image">
-                    <figure><img src="loginForm/images/im.PNG" alt="sing up image"></figure>
-                    <a href="{{ route ('login') }}" class="signup-image-link">I am already member</a>
+                    <figure><img src="loginForm/images/login1.PNG" alt="sing up image"></figure>
+                    <a href="{{ route ('login') }}" class="signup-image-link">Login</a>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
     <div class="container">
         <div class="signin-content">
             <div class="signin-image">
-                <figure><img src="loginForm/images/im.PNG" alt="sing up image"></figure>
+                <figure><img src="loginForm/images/signin-image.jpg" alt="sing up image"></figure>
                 <a href="{{ route ('registration') }}" class="signup-image-link">Create an account</a>
             </div>
 

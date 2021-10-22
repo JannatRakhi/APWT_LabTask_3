@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-   
+   public function showAdminProfile(){
 
+    $admin = Admin::where('id',Session()->get('id'))->first();
+    return view('pages.dashboard')->with('admin',$admin);
+   }
+   
     function EditAdminProfile($id)
     {
         $admin = Admin::find($id);
@@ -57,6 +61,7 @@ class AdminController extends Controller
         $var->password = $request->password;
         $var->update();
         $request->session()->flash('admin-update', 'Profile Update successfully');
-        return redirect('dashboard');
+        return redirect('adminDashboard');
+       
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Admin Profile</title>
+    <title>Edit User Profile</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -19,7 +19,7 @@
         <div class="d-flex justify-content-center align-items-center" style="
     
         width: 100%;
-        background: darkblue;
+        background: white;
         ">
             <div>
                 <div class="form-area">
@@ -31,13 +31,13 @@
                         color: white;
                     ">
                         {{-- <form action="{{route('addSeller')}}" method="post" enctype="multipart/form-data"> --}}
-                        <form action="{{route('updateAdminProfile')}}" method="post">
+                        <form action="{{route('updateUserProfile')}}" method="post">
                             {{csrf_field()}}
     
                             <table class="mb-4">
                                 <tr>
                                     <td>
-                                        <h4 class="fw-bold mt-5">Update {{ $admin->name }}'s Information</h4>
+                                        <h4 class="fw-bold text-success mt-5">Update {{ $user->name }}'s Information</h4>
                                     </td>
     
                                 </tr>
@@ -46,11 +46,11 @@
                             <table>
                                 <tr hidden>
                                     <td>Id</td>
-                                    <td> <input type="text" name="id" value={{ $admin->id }}></td>
+                                    <td> <input type="text" name="id" value={{ $user->id }}></td>
                                 </tr>
                                 <tr>
                                     <td><label class="pr-3">Name</label></td>
-                                    <td class="pr-3 py-2" style="width:400px;"><input type="text" value={{ $admin->name }}
+                                    <td class="pr-3 py-2" style="width:400px;"><input type="text" value={{ $user->name }}
                                             name="name" class="form-control">
                                     </td>
                                     <td >
@@ -63,7 +63,7 @@
                                 </tr>
                                 <tr hidden>
                                     <td><label class="pr-3">Role</label></td>
-                                    <td class="pr-3 py-2"><select type="input" value={{ $admin->role }} name="role"
+                                    <td class="pr-3 py-2"><select type="input" value={{ $user->role }} name="role"
                                             class="form-control">
                                             <option value="seller">Seller</option>
                                         </select>
@@ -78,7 +78,7 @@
                                 </tr>
                                 <tr >
                                     <td > <label class="pr-3">Email</label></td>
-                                    <td class="pr-3 py-2"><input value={{ $admin->email }} type="text" name="email"
+                                    <td class="pr-3 py-2"><input value={{ $user->email }} type="text" name="email"
                                             class="form-control">
                                     </td>
                                     <td>
@@ -96,7 +96,7 @@
                                 </tr>
                                 <tr>
                                     <td><label class="pr-3">Address</label></td>
-                                    <td class="pr-3 py-2"><input style="width:400px;" value={{ $admin->address }} type="text" name="address"
+                                    <td class="pr-3 py-2"><input style="width:400px;" value={{ $user->address }} type="text" name="address"
                                             class="form-control"></td>
                                     <td>
                                         <div>
@@ -108,7 +108,7 @@
                                 </tr>
                                 <tr>
                                     <td><label class="pr-3">Phone</label></td>
-                                    <td class="pr-3 py-2"><input value={{ $admin->phone }} type="text" name="phone"
+                                    <td class="pr-3 py-2"><input value={{ $user->phone }} type="text" name="phone"
                                             class="form-control">
                                     </td>
                                     <td>
@@ -121,7 +121,7 @@
                                 </tr>
                                 <tr>
                                     <td><label class="pr-3">Password</label></td>
-                                    <td class="pr-3 py-2"><input value={{ $admin->password }} type="password"
+                                    <td class="pr-3 py-2"><input value={{ $user->password }} type="password"
                                             name="password" class="form-control"></td>
                                     <td>
                                         <div>
@@ -134,7 +134,7 @@
                                 
                             </table>
                             <div class="d-flex">
-                                <a href={{route('adminDashboard')}} class="btn btn-danger btn-sm mt-3 px-3">Back</a>
+                                <a href={{route('userDashboard')}} class="btn btn-danger btn-sm mt-3 px-3">Back</a>
                                 <div class="mx-3">
                                     <input type="submit" value="Update" class="btn btn-primary btn-sm mt-3 px-4">
                                 </div>

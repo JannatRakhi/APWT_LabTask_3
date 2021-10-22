@@ -21,23 +21,30 @@
         <div class="col-3" style="background: darkblue;">
             @include('pages.adminSideBar')
         </div>
-        <div class="col-9">
-            <h1 class="mt-5 text-center">Admin Profile</h1>
-
-
-            <div class="d-flex justify-content-center align-items-center" style="height: 70vh">
+        <div class="col-9 py-5">
+            <h2>Admin Profile</h2>
+            <div class="d-flex justify-content-center align-items-center" style="height: 65vh;">
                 <div>
-                    
-                    {{-- <h4>Name: {{ $profileInfo->name }}</h4>
-                    <h4>Email: {{ $profileInfo->email }}</h4>
-                    <h4>Phone: {{ $profileInfo->phone }}</h4>
-                    <h4>Address: {{ $profileInfo->address }}</h4>
-                    <a  href={{ "editAdminProfile/".$profileInfo->id }} class="btn btn-danger btn-sm">Edit Profile</a> --}}
+                    @if(session('admin-update'))
+                    <div class="alert alert-danger font-weight-bold w-100 text-center" role="alert">
+                        <span class="fw-bold">
+                            {{ session('admin-update') }}
+                        </span>
+                    </div>
+                    @endif
+
+                    <h3 >UserID: {{Session()->get('id')}}</h3>
+                    <h4>Name: {{ $admin->name }}</h4>
+                    <h4>Phone: {{ $admin->phone }}</h4>
+                    <h4>Email {{ $admin->email }}</h4>
+                    <h4>Address {{ $admin->address }}</h4>
+                    <a href={{ "editAdminProfile/".$admin->id}} class="btn btn-danger btn-sm">Edit Profile</a>
+
                 </div>
             </div>
-
         </div>
-        @endsection
+    </div>
+    @endsection
 </body>
 
 </html>
